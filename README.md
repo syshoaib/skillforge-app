@@ -1,6 +1,42 @@
-# SkillforgeApp
+# Skill Forge App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+Skill Forge App is an Angular application demonstrating modern component design, state management, and parent-child communication using both decorator-based and signal-based Angular patterns.
+
+## Key Features
+
+### 1. CourseCardComponent
+
+- Reusable, interactive course card for browsing courses.
+- Supports both @Input()/@Output() decorators and signal-based input()/output() for parent-child communication.
+- Manages internal state with signals (e.g., enrollment status).
+- Emits actions/events to parent using both decorator and signal-based approaches.
+- Flexible selector: usable as element or attribute.
+- View encapsulation: Emulated.
+
+### 2. UserProfileHeaderComponent
+
+- Personalized user header with profile picture and in-place editable display name.
+- Accepts initial user data as signals.
+- Two-way binding with parent using model() signal.
+- Internal state management for edit/display mode using signals.
+- Style isolation via Shadow DOM encapsulation.
+- Lifecycle logging for observability and debugging.
+
+## Angular Concepts Demonstrated
+
+- Component creation and code scaffolding
+- Decorator-based and signal-based inputs/outputs
+- Signal-based two-way data binding
+- Internal state management with signals
+- View encapsulation (Emulated and Shadow DOM)
+- Template event listeners and conditional rendering
+- Parent-child communication
+- Lifecycle hooks and logging
+
+## Usage
+
+- Browse and enroll in courses using the CourseCardComponent.
+- Edit and synchronize user display name with the UserProfileHeaderComponent.
 
 ## Development server
 
