@@ -1,0 +1,16 @@
+<div class="profile-header">
+  <img [src]="avatarUrl()" alt="Profile picture" width="64" height="64" />
+  <ng-container *ngIf="!isEditing(); else editBlock">
+    <span>{{ userName() }}</span>
+    <button type="button" (click)="startEdit()">Edit</button>
+  </ng-container>
+  <ng-template #editBlock>
+    <input
+      type="text"
+      [value]="userName()"
+      (input)="userName.set($any($event.target).value)"
+      aria-label="Edit display name"
+    />
+    <button type="button" (click)="saveEdit()">Save</button>
+  </ng-template>
+</div>

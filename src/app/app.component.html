@@ -324,6 +324,13 @@
   </div>
 </main> -->
 
+<app-user-profile-header
+  [(userName)]="currentUser"
+  [avatarUrl]="'https://placehold.co/64x64?text=Alice'"
+></app-user-profile-header>
+
+<p>Name in Parent: {{ currentUser() }}</p>
+
 <app-course-card
   [courseTitle]="'Angular Basics'"
   [courseDetails]="course1"

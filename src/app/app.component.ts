@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { RouterOutlet } from '@angular/router';
+import { UserProfileHeaderComponent } from './user-profile-header/user-profile-header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CourseCardComponent, RouterOutlet],
+  imports: [CourseCardComponent, RouterOutlet, UserProfileHeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -35,4 +36,6 @@ export class AppComponent {
   onViewDetails(details: any) {
     console.log('View details:', details);
   }
+
+  currentUser = signal('Alice');
 }
