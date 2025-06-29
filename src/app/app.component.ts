@@ -1,12 +1,38 @@
 import { Component } from '@angular/core';
+import { CourseCardComponent } from './course-card/course-card.component';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CourseCardComponent, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'skillforge-app';
+  course1 = {
+    image: 'https://placehold.co/350x160?text=Angular+Basics',
+    author: 'Jane Doe',
+    duration: 5,
+    complexity: 'Beginner' as const,
+    courseDescription: 'Learn the basics of Angular framework.',
+    rating: 4.5,
+  };
+
+  course2 = {
+    image: 'https://placehold.co/350x160?text=Advanced+Angular',
+    author: 'John Smith',
+    duration: 8,
+    complexity: 'Advanced' as const,
+    courseDescription: 'Deep dive into advanced Angular topics.',
+    rating: 4.8,
+  };
+
+  onEnrollRequest(title: string) {
+    console.log('Enroll requested for:', title);
+  }
+
+  onViewDetails(details: any) {
+    console.log('View details:', details);
+  }
 }

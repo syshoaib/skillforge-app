@@ -1,0 +1,19 @@
+<div
+  [ngClass]="{ 'featured-card': isFeatured() }"
+  [attr.data-testid]="'course-card-' + courseTitle"
+  (click)="onCardClick($event)"
+>
+  <h2>{{ courseTitle }}</h2>
+  <img [src]="courseDetails().image" alt="{{ courseTitle }} image" />
+  <p>Author: {{ courseDetails().author }}</p>
+  <p>Duration: {{ courseDetails().duration }} hours</p>
+  <p>Complexity: {{ courseDetails().complexity }}</p>
+  <p>{{ courseDetails().courseDescription }}</p>
+  <p>Rating: {{ courseDetails().rating }}</p>
+  <button
+    (click)="onEnroll($event)"
+    [disabled]="enrollmentStatus() === 'Enrolled'"
+  >
+    {{ enrollmentStatus() === "Enrolled" ? "Enrolled" : "Enroll Now" }}
+  </button>
+</div>
